@@ -1,0 +1,525 @@
+/* Estilos para la pantalla de carga */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*hero*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+section {
+  margin: 5vh;
+}
+
+/* Variables de color */
+:root {
+  --clr: #0f0;
+  font-family: "Montserrat", serif;
+}
+
+/* Estilos generales */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #1e1f3c, #2a3b5c, #0d1b2a);
+
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  height: 100%;
+}
+
+/* Estilos del header */
+header {
+  display: block;
+  justify-content: center;
+  position: fixed;
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0;
+  width: 100%;
+  background: radial-gradient(circle, #161a2d, #1e2b47, #0a141f);
+  z-index: 1050; /* Asegura que esté por encima del contenido */
+}
+
+/* Estilos del botón de navegación */
+.btn-nav {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+}
+
+.btn-nav:hover,
+.btn-nav:focus {
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
+}
+
+.activo {
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
+}
+
+li {
+  padding: 3vh;
+}
+
+.navbar {
+  position: relative;
+  align-items: center;
+}
+
+.navbar-collapse {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Alinea el contenido al inicio */
+    z-index: 9999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 3rem;
+    /* Espacio para el botón */
+  }
+
+  /* Menú desplegado */
+  .navbar-collapse.show {
+    transform: translateY(0);
+  }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    /* Margen superior para separarlo del botón */
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    z-index: 9999;
+  }
+
+  .btn-nav {
+    width: 100%;
+  }
+
+  /* Posiciona el botón toggler en la esquina superior izquierda */
+  .navbar-toggler {
+    color: #ffffff;
+    border-color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    /* Asegura que esté por encima del menú */
+  }
+
+  /* Asegúrate de que el contenido detrás esté en un z-index menor */
+  .content {
+    z-index: 1;
+  }
+
+  .social-login-icons {
+    z-index: -11;
+  }
+
+  /* Botón del toggler siempre visible */
+  .navbar-toggler {
+    color: #ffffff;
+    border-color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    /* Asegura que esté por encima del menú */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo para destacar si es necesario */
+  }
+
+  /* Menú desplegable */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1050;
+    /* Menor que el botón toggler */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 3rem;
+  }
+
+  .navbar-collapse.show {
+    transform: translateY(0);
+  }
+}
+
+/*footer*/
+.social-login-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.social-login-icons svg {
+  width: 40px;
+}
+
+.social-icon-1,
+.social-icon-1-1,
+.social-icon-2,
+.social-icon-2-2,
+.social-icon-3,
+.social-icon-3-3,
+.social-icon-4,
+.social-icon-4-4 {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin: 20px 0 0px 0;
+}
+
+.icon svg {
+  fill: #ffffff;
+}
+
+.socialcontainer {
+  height: 80px;
+  overflow: hidden;
+}
+
+.social-icon-1 {
+  transition-duration: 0.4s;
+  background-color: rgb(0, 0, 0);
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+}
+
+.social-icon-1 svg,
+.social-icon-2 svg,
+.social-icon-3 svg,
+.social-icon-4 svg {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+}
+
+.social-icon-1-1 {
+  transition-duration: 0.4s;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.socialcontainer:hover .social-icon-1 {
+  transform: translateY(-70px);
+}
+
+.socialcontainer:hover .social-icon-1 svg,
+.socialcontainer:hover .social-icon-2 svg,
+.socialcontainer:hover .social-icon-3 svg,
+.socialcontainer:hover .social-icon-4 svg {
+  opacity: 1;
+}
+
+.social-icon-2 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  background: linear-gradient(
+    72.44deg,
+    #ff7a00 11.92%,
+    #ff0169 51.56%,
+    #d300c5 85.69%
+  );
+}
+
+.socialcontainer:hover .social-icon-2 {
+  transform: translateY(-70px);
+}
+
+.social-icon-3 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  background: #316ff6;
+}
+
+.socialcontainer:hover .social-icon-3 {
+  transform: translateY(-70px);
+}
+
+.social-icon-4 {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+
+  background: linear-gradient(
+    180deg,
+    rgba(129, 34, 144, 1) 0%,
+    rgba(77, 34, 124, 1) 91%
+  );
+}
+
+.socialcontainer:hover .social-icon-4 {
+  transform: translateY(-70px);
+}
+
+.texto-footer {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animaciones de entrada */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1.5s forwards ease-in;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efecto de fade-in */
+.timeline-event.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.container-carousel {
+  margin: 4% auto;
+  width: 210px;
+  height: 140px;
+  position: relative;
+  perspective: 1000px;
+  margin-top: 10vh;
+}
+
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotation 20s infinite linear;
+}
+
+#carousel figure {
+  display: block;
+  position: absolute;
+  width: 186px;
+  height: 116px;
+  left: 10px;
+  top: 10px;
+  background: black;
+  overflow: hidden;
+  border: solid 5px black;
+}
+
+#carousel figure:nth-child(1) {
+  transform: rotateY(0deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(2) {
+  transform: rotateY(40deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(3) {
+  transform: rotateY(80deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(4) {
+  transform: rotateY(120deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(5) {
+  transform: rotateY(160deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(6) {
+  transform: rotateY(200deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(7) {
+  transform: rotateY(240deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(8) {
+  transform: rotateY(280deg) translateZ(288px);
+}
+
+#carousel figure:nth-child(9) {
+  transform: rotateY(320deg) translateZ(288px);
+}
+
+img:hover {
+  transform: scale(1.2, 1.2);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (max-width: 992px) {
+  .container-carousel {
+    transform: scale(0.6);
+  }
+}
+
+/* Estilo general de la sección */
+#skills {
+  padding: 60px 0;
+}
+
+/* Estilos para las tarjetas de habilidades */
+.skill-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.skill-icon {
+  color: #088fff;
+  font-size: 40px;
+}
+
+/* Estilo para los textos dentro de la tarjeta */
+.skill-card .card-body {
+  padding: 30px;
+  flex-grow: 1; /* Asegura que el contenido de la tarjeta ocupe todo el espacio disponible */
+}
+
+.skill-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.skill-card .card-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .skill-card .card-body {
+    padding: 20px;
+  }
+
+  .skill-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .skill-card .card-text {
+    font-size: 0.9rem;
+  }
+}
